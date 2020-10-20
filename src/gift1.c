@@ -41,10 +41,6 @@ int main()
 	FILE *fout = fopen( "gift1.out", "w+" );
 
 
-	// int *arr = (int *) calloc( length, sizeof( int ) );
-	//
-	// for ( int *el = arr; el < arr + length; ++el )
-	
 	int exit_flag = 0;
 	
 	Person data[11];
@@ -82,9 +78,6 @@ int main()
 			total_money -= received;
 		}
 		data[oglocation].money += total_money;
-		// for ( Person *p = data; p < data + amount_people; ++p )
-		// 	printf( "%s %d\n", p->name, p->money );
-		// printf( "\n" );
 	}
 
 	for ( Person *p = data; p < data + amount_people; ++p )

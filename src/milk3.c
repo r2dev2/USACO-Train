@@ -53,7 +53,6 @@ int get_number( char bucket_with_to_fill )
 	int count = 0;
 	if ( arrays_done[hash_buckets( bucket_with_to_fill )] )
 	{
-		// printf( "\t[%d, %d, %d] has been done\n", filled[0], filled[1], filled[2] );
 		return 0;
 	}
 	arrays_done[hash_buckets( bucket_with_to_fill )] = 1;
@@ -64,9 +63,7 @@ int get_number( char bucket_with_to_fill )
 			int a = filled[0],
 			    b = filled[1],
 			    c = filled[2];
-			// printf( "trying [%d, %d, %d]\n", filled[0], filled[1], filled[2] );
 			int amount = fill_buckets( i, bucket_with_to_fill );
-			// printf( "led to [%d, %d, %d]\n", filled[0], filled[1], filled[2] );
 			if ( filled[0] == 0 && !amount_milk_in_c[filled[2]] )
 			{
 				amount_milk_in_c[filled[2]] = 1;
@@ -75,7 +72,6 @@ int get_number( char bucket_with_to_fill )
 			count += get_number( 0 ) + get_number( 1 ) + get_number( 2 );
 			filled[i] -= amount;
 			filled[bucket_with_to_fill] += amount;
-			// assert (filled[0] == a && filled[1] == b && filled[2] == c);
 		}
 	}
 	return count;
@@ -92,7 +88,6 @@ int main()
 
 	int num_combos = get_number( 2 );
 
-	// printf( "Received %d combinations\n", num_combos );
 
 	int queue = -1;
 

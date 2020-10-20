@@ -28,10 +28,6 @@ int main()
 	FILE *fout = fopen( "ride.out", "w+" );
 
 
-	// int *arr = (int *) calloc( length, sizeof( int ) );
-	//
-	// for ( int *el = arr; el < arr + length; ++el )
-	
 	char comet_name[8];
 	char group_name[8];
 	

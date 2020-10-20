@@ -97,19 +97,6 @@ int main()
 		}
 	}
 
-
-	// for ( int n = 1; n <= 300; ++n )
-	// {
-	// 	strcpy( squared, "" );
-	// 	strcpy( num, "" );
-	// 	to_base( B, n*n, squared );
-	// 	if ( is_palindrome( squared ) )
-	// 	{
-	// 		to_base( B, n, num );
-	// 		fprintf( fout, "%s %s\n", num, squared );
-	// 	}
-	// }
-
 	fclose( fin );
 	fclose( fout );
 

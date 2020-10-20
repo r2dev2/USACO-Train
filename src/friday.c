@@ -30,10 +30,6 @@ int main()
 	FILE *fout = fopen( "OUTPUT.out", "w+" );
 
 
-	// int *arr = (int *) calloc( length, sizeof( int ) );
-	//
-	// for ( int *el = arr; el < arr + length; ++el )
-
 	fclose( fin );
 	fclose( fout );
 

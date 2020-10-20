@@ -116,9 +116,6 @@ int main()
 	FILE *fout = fopen( "wormhole.out", "w+" );
 	
 
-	// for ( int i = 0; i < 15; ++i )
-	// 	nextmap[i] = -1;
-
 	fscanf( fin, "%d", &N );
 	for ( int i = 0; i < N; ++i )
 		fscanf( fin, "%d %d", &holes[i].x, &holes[i].y );

@@ -61,15 +61,11 @@ int main()
 	FILE *fout = fopen( "beads.out", "w+" );
 
 
-	// int *arr = (int *) calloc( length, sizeof( int ) );
-	//
-	// for ( int *el = arr; el < arr + length; ++el )
 	char raw_necklace[355];
 	int beads[710];
 	int boundaries[710][2];
 	int N;
 
-	// int char_to_num[3] = { 'r', 'w', 'b' };
 	int char_to_num[200];
 
 	char_to_num['r'] = -1;

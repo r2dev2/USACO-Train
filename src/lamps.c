@@ -164,10 +164,8 @@ int is_valid( Lamps *ls )
 
 void action( Lamps *ls )
 {
-	// if ( is_valid( ls ) )
 	Lamps new_l = *ls;
 	button_1( &new_l );
-	// if ( !lamp_in_set( &new_l )  && is_valid( ls ) )
 	if ( !lamp_in_set( &new_l ) && is_valid( ls ) )
 	{
 		add_lamp_to_set( &new_l );

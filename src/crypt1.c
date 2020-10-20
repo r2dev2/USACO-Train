@@ -79,7 +79,6 @@ int main()
 					{
 						if ( is_valid( numarr[a], numarr[b], numarr[c], numarr[d], numarr[e] ) )
 						{
-							// printf( "%d %d %d %d %d\n", numarr[a], numarr[b], numarr[c], numarr[d], numarr[e] );
 							numsolutions++;
 						}
 					}
@@ -87,9 +86,6 @@ int main()
 			}
 		}
 	}
-
-	// assert (is_valid (2, 2, 2, 2, 2) );
-	// assert (!is_valid (2, 2, 2, 2, 3) );
 
 	fprintf( fout, "%d\n", numsolutions );
 

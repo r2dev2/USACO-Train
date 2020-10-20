@@ -85,10 +85,8 @@ Solution solve( Solution start )
 		}
 		if ( doit )
 		{
-		// printf( "ee\n" );
 			Solution sol = solve( head );
-		// printf( "eeee %d\n\n", doit );
-			if ( sol.len > best.len ) // || sol.len == best.len 
+			if ( sol.len > best.len ) 
 			{
 				best = sol;
 			}
@@ -113,7 +111,6 @@ int main()
 
 	fscanf( fin, "%d %d %d", &N, &B, &D );
 
-	// B -= 1;
 
 
 	printf( "%d\n", hamming_distance( 42, 30 ) );

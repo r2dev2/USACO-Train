@@ -115,8 +115,6 @@ int main()
 	if ( !get_num_continuations( fout, dictionary, numstr, length, "" ) )
 		fprintf( fout, "NONE\n" );
 
-	// printf( "\n%c\n", dictionary->next['K'-'A'].next['R'-'A'].next['I'-'A'].next['S'-'A'].l );
-
 	fclose( din );
 	fclose( fin );
 	fclose( fout );

@@ -81,8 +81,6 @@ int main()
 		}
 	}
 
-	// printarr( nodes );
-
 
 	fprintf( fout, "%d\n", traverse_tree( 0, 0 )  );
 

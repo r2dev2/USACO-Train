@@ -71,7 +71,6 @@ int main()
 	}
 
 	int lowest_blocked = INT_MAX;
-	// void most_efficient_M( int *m, int *blocked, int size_board, char *stalls, int length )
 	for ( int sb = 1; sb <= S; ++sb )
 	{
 		int newm, amount_blocked;

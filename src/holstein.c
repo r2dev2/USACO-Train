@@ -94,10 +94,7 @@ char is_possible( FeedSequence feed_s, int gg )
 				feed_s.fp.actual[g] = feed_s.fp.lower[g];
 		}
 		set_sum( &feed_s );
-		// int superiority = is_superior( &feed_s );
 		int superiority = best_feed == NULL || best_feed->sum >= feed_s.sum;
-		// if ( best_feed )
-		// 	printf( "%d %d %d\n", best_feed->sum, feed_s.sum, superiority );
 		return superiority;
 	}
 	return 0;
@@ -105,7 +102,6 @@ char is_possible( FeedSequence feed_s, int gg )
 
 char is_superior( FeedSequence *feed_s )
 {
-	// printf( "%d %d\n", feed_s->sum, best_feed->sum );
 	if ( best_feed == NULL )
 		return 1;
 	else if ( feed_s->sum < best_feed->sum )
@@ -156,44 +152,24 @@ void get_min_feed( FeedSequence feed_s )
 	ui64 hashed = hash_fs( &feed_s );
 	for ( int g = 0; g < G; ++g )
 	{
-		// printf( "%d-%d-%d\t", feed_s.fp.lower[g], feed_s.fp.actual[g], feed_s.fp.upper[g] );
 		if ( feed_s.fp.upper[g] - feed_s.fp.lower[g] >= 1 )
 			pls_quit = 0;
 	}
 	if ( feed_set.count(hashed) || !is_possible( feed_s, -1 ) )
 		return;
-	// printf( "sum: %d sufficient: %d hash: %lld contains: %lld\n", feed_s.sum, sufficient, hashed, feed_set.count(hashed) );
-	// int x;
-	// std::cin >> x;
 	if ( pls_quit || feed_set.count(hashed) )
 		return;
 	feed_set.insert(hashed);
-	// fprintf( stdout, "%d", feed_s.sum );
-	// for ( int g = 0; g < G; ++g )
-	// 	fprintf( stdout, " %d", (feed_s.fp.upper[g]+feed_s.fp.lower[g])/2 );
-	// fprintf( stdout, "\n" );
 	if ( sufficient )
 	{
-		// fprintf( stdout, "%d", feed_s.sum );
-		// for ( int g = 0; g < G; ++g )
-		// 	fprintf( stdout, " %d", (feed_s.fp.upper[g]+feed_s.fp.lower[g])/2 );
-		// fprintf( stdout, "\n" );
-		
-		// printf( "Testing superiority\n" );
 		if ( best_feed == NULL )
 		{
-			// printf( "Created first best\n\n" );
 			best_feed = (FeedSequence*) malloc( sizeof (FeedSequence) );
 			*best_feed = feed_s;
 		}
 		else if ( is_superior( &feed_s ) )
 		{
-			// printf( "But I am superior\n\n" );
 			*best_feed = feed_s;
-		}
-		else
-		{
-			// printf( "Not superior\n\n" );
 		}
 		for ( int g = G-1; g >= 0; --g )
 		{
@@ -272,35 +248,6 @@ int main()
 
 	printf( "%d\n", feeds[1][1] );
 
-	// for ( int i = 0; i < 3; ++i )
-	// {
-	// 	for ( int j = 0; j < 4; ++j )
-	// 		printf( "%d ", feeds[i][j] );
-	// 	printf( "\n" );
-	// }
-
-	// FeedSequence ffs = default_feed;
-
-	// ffs.fp.actual[0] = 1;
-	// ffs.fp.actual[1] = 0;
-	// ffs.fp.actual[2] = 1;
-
-	// set_sum( &ffs );
-	// 
-	// assert (is_sufficient(&ffs));
-	// // assert (is_superior(&ffs));
-	
-	// FeedSequence ffs = default_feed;
-	// ffs.fp.actual[0] = 1;
-	// ffs.fp.actual[1] = 1;
-	// ffs.fp.actual[2] = 1;
-	// ffs.fp.actual[3] = 1;
-	// ffs.fp.actual[4] = 1;
-
-	// set_sum( &ffs );
-
-	// assert (is_superior(&ffs));
-	
 
 	if ( best_feed->sum == 18 )
 	{

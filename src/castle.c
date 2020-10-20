@@ -76,7 +76,7 @@ CastleResult get_number_modules_in_room( Castle cas, int depth, VV *rooms )
 
 	count++;
 	
-	if ( !has_been_visited ) // && depth < castle.m*castle.n + 10 )
+	if ( !has_been_visited ) 
 	{
 		max = break_max = 1;
 		cas.visited.a[cas.head.m][cas.head.n] = 1;

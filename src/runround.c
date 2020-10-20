@@ -72,10 +72,8 @@ char is_runaround( ui32 num )
 	int head = 0;
 	for ( int i = 0; i < digs.num_digits; ++i )
 	{
-		// printf( "digs[%d] = %d next at digs[%d %% %d]\n", head, digs.digits[head], head + digs.digits[head], digs.num_digits );
 		if ( digs.visited[head] )
 		{
-			// printf( "1 %d %d\n", head, digs.digits[head] );
 			return 0;
 		}
 		digs.visited[head]++;
@@ -85,11 +83,9 @@ char is_runaround( ui32 num )
 	{
 		if ( !digs.visited[i] )
 		{
-			// printf( "2\n" );
 			return 0;
 		}
 	}
-	// printf( "got here digs.visited[0] = %d\n", digs.visited[0] );
 	return head == 0;
 }
 

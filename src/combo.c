@@ -71,14 +71,7 @@ int main()
 	fscanf( fin, "%d %d %d", &a1, &b1, &c1 );
 	fscanf( fin, "%d %d %d", &a2, &b2, &c2 );
 
-	// assert (add_delta( 1, -1 ) == N);
-	// assert (add_delta( 1, -2 ) == N-1);
-	// assert (add_delta( N, 0 ) == N);
-	// assert (add_delta( N, 1 ) == 1);
-	// assert (add_delta( 1, 2 ) == 3);
-
 	int count = 0;
-	
 
 	count += get_num( a1, b1, c1 );
 	count += get_num( a2, b2, c2 );

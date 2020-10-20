@@ -24,7 +24,6 @@ FILE *fin, *fout;
 int S_l, p_l; // length of S[] and primitives[][]
 char S[200010];
 int solve_cache[200010];
-// char primitives[200][11];
 typedef struct Node Node;
 
 struct Node {
@@ -46,7 +45,6 @@ void add_primitive( const char *str )
 	Node *head = &primitives;
 	for ( const char *c = str; c < end; ++c )
 	{
-		// printf( "%c %p\n", *c, head->nexts[*c - 'A'] );
 		Node **next_head = &head->nexts[*c - 'A'];
 		if ( *next_head == NULL )
 		{
@@ -55,7 +53,6 @@ void add_primitive( const char *str )
 		}
 		head = *next_head;
 	}
-	// printf( "\n" );
 	head->is_end = 1;
 	assert (is_in_set( str ));
 }
@@ -86,46 +83,29 @@ int solve( int len )
 	int last_was_end = 0;
 
 	Node *head = &primitives;
-	// for ( char c = 'A'; c <= 'Z'; ++c )
-	// {
-	// 	printf( "%c-%p\n", c, head->nexts[c-'A'] );
-	// }
-
-	// printf( "%d\n", len );
 	int i;
 	for ( i = len; i < S_l ; ++i )
 	{
 		char c = S[i];
 		Node *next_head = head->nexts[c - 'A'];
-		// if ( 0 && i > 440 )
-		// {
-		// 	printf( "S[%d]: %c head: %p\n", i, c, next_head );
-		// 	int x;
-		// 	scanf( "%d", &x );
-		// }
 		max = MAX(max, i * head->is_end);
 		if ( next_head == NULL && i > len && head->is_end )
 		{
-			// TODO recurse on solve
 			max = MAX(max, solve( i ));
 			break;
 		}
 		else if ( next_head == NULL )
 		{
-			// printf( "%d\n", i );
 			break;
 		}
 		else
 		{
-			// TODO increment len and head
 			if ( head->is_end )
 			{
 				max = MAX(max, solve( i ));
 				last_was_end = -1;
 			}
 			head = next_head;
-			// max = MAX(max, i);
-			// printf( "else\n" );
 			last_was_end = last_was_end == -1 ? 1 : 0;
 		}
 
