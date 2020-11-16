@@ -5,6 +5,8 @@ TASK: taskname
 */
 
 #include <assert.h>
+#include <ctype.h>
+#include <float.h>
 #include <limits.h>
 #include <math.h>
 #include <stdio.h>
